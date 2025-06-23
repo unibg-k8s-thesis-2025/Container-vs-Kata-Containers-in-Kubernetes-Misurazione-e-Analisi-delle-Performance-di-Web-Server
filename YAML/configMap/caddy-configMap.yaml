@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: caddyfile-config
+data:
+  Caddyfile: |
+    {
+      auto_https off
+    }
+
+    :80, :443 {
+      tls internal
+      respond "<html><head><meta name='color-scheme' content='light dark'></head><body><pre style='word-wrap: break-word; white-space: pre-wrap;'>Web server -- Home page</pre></body></html>"
+    }
